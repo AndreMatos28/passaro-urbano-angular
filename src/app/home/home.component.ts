@@ -9,6 +9,7 @@ import { Oferta } from '../shared/oferta.model'
   styleUrls: ['./home.component.css'],
   providers: [OfertasService] //uso dos serviços no Angular
 })
+
 export class HomeComponent implements OnInit {
 
   public ofertas: Oferta[] = [];
@@ -18,12 +19,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     //this.ofertas = this.ofertasService.getOfertas();
 
-    this.ofertasService.getOfertas2()
-      .then(( ofertas: Oferta[] ) => {
-        console.log("Função resolve() foi resolvida depois de 3 segundos")
-        this.ofertas = ofertas})
-
-
+    this.ofertasService.getOfertas()
+    .then(( ofertas: Oferta[] ) => this.ofertas = ofertas)
     .catch(( param: any) => console.log(param));
   }
 }

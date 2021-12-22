@@ -1,5 +1,5 @@
 export class Oferta {
-    public id: number = 0
+    public id: number = 0;
     public categoria: string = "";
     public titulo: string = "";
     public descricao_oferta: string = "";
